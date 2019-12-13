@@ -7,7 +7,6 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-
 const storeInstance = createStore(
     combineReducers({
 
