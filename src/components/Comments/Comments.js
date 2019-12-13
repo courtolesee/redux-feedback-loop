@@ -6,19 +6,22 @@ import { connect } from 'react-redux';
 
 
 class Comments extends Component {
+
+    goToReview = ()=>{
+        this.props.history.push(`/review`);
+    }
+
     render(){
         return (
             <div>
                 <h2>Any comments you want to leave?</h2>
                 <input type="text" placeholder="leave comments here"/>
-                <button>NEXT</button>
+                <button onClick={this.goToReview}>NEXT</button>
             </div>
         )
     }
 }
 
-
-//if you want just one reducer you can say so
 const putReduxStateOnProps = ( reduxState ) => ({
     reduxState
   })

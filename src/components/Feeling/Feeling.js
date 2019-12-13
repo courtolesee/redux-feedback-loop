@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // 1st route - 1-5 how are you feeling today?
-// page starts here
 // next goes to Understanding
 
 class Feeling extends Component {
+
+    goToUnderstanding = ()=>{
+        this.props.history.push(`/understanding`);
+    }
+
     render(){
         return (
         <div>
@@ -17,14 +21,12 @@ class Feeling extends Component {
                 <option value="4">4</option> 
                 <option value="5">5</option> 
             </select>
-            <button>NEXT</button>
+            <button onClick={this.goToUnderstanding}>NEXT</button>
         </div> 
         )
     }
 }
 
-
-//if you want just one reducer you can say so
 const putReduxStateOnProps = ( reduxState ) => ({
     reduxState
   })

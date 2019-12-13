@@ -1,16 +1,18 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import axios from 'axios';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { withRouter, HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+// component imports
+import React, { Component } from 'react';
 import Comments from '../Comments/Comments';
 import Feeling from '../Feeling/Feeling';
 import Support from '../Support/Support';
 import Understanding from '../Understanding/Understanding';
 import Review from '../Review/Review';
 import Success from '../Success/Success';
+import StartFeedback from '../StartFeedback/StartFeedback';
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -20,6 +22,7 @@ class App extends Component {
         </header>
         <br/>
         <Router>
+          <Route exact path="/" component={ StartFeedback } />
           <Route path="/feeling" component={ Feeling } />
           <Route path="/understanding" component={ Understanding } />
           <Route path="/support" component={ Support } />
@@ -32,7 +35,4 @@ class App extends Component {
   }
 }
 
-const putReduxStateOnProps = ( reduxState ) => ({
-  reduxState
-})
-export default connect( putReduxStateOnProps )(App);
+export default App;

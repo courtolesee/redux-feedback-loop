@@ -5,6 +5,11 @@ import { connect } from 'react-redux';
 // next goes to Support
 
 class Understanding extends Component {
+
+    goToSupport = ()=>{
+        this.props.history.push(`/support`);
+    }
+
     render(){
         return (
         <div>
@@ -16,14 +21,12 @@ class Understanding extends Component {
                 <option value="4">4</option> 
                 <option value="5">5</option> 
             </select>
-            <button>NEXT</button>
+            <button onClick={this.goToSupport}>NEXT</button>
         </div> 
         )
     }
 }
 
-
-//if you want just one reducer you can say so
 const putReduxStateOnProps = ( reduxState ) => ({
     reduxState
   })

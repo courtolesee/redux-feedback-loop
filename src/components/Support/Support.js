@@ -5,10 +5,15 @@ import { connect } from 'react-redux';
 // next goes to Comments
 
 class Support extends Component {
+
+    goToComments = ()=>{
+        this.props.history.push(`/comments`);
+    }
+
     render(){
         return (
         <div>
-            <h2>How well are you understanding the content?</h2>
+            <h2>How well are you being supported?</h2>
             <select id="select"> 
                 <option value="1">1</option> 
                 <option value="2">2</option> 
@@ -16,14 +21,12 @@ class Support extends Component {
                 <option value="4">4</option> 
                 <option value="5">5</option> 
             </select>
-            <button>NEXT</button>
+            <button onClick={this.goToComments}>NEXT</button>
         </div> 
         )
     }
 }
 
-
-//if you want just one reducer you can say so
 const putReduxStateOnProps = ( reduxState ) => ({
     reduxState
   })

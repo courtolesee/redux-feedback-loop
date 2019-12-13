@@ -7,18 +7,21 @@ import { connect } from 'react-redux';
 // Submit Btn sends data to server and saves in DB
 
 class Review extends Component {
+
+    goToSuccess = ()=>{
+        this.props.history.push(`/success`);
+    }
+
     render(){
         return (
             <div>
                 <h2>Review Your Feedback</h2>
-                <button>SUBMIT</button>
+                <button onClick={this.goToSuccess}>SUBMIT</button>
             </div>
         )
     }
 }
 
-
-//if you want just one reducer you can say so
 const putReduxStateOnProps = ( reduxState ) => ({
     reduxState
   })
