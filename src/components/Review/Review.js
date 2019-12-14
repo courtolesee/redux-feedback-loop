@@ -19,6 +19,13 @@ class Review extends Component {
         return (
             <div>
                 <h2>Review Your Feedback</h2>
+                {JSON.stringify(this.props.reduxState)}
+                <div>
+                    <p>Your Feelings: {this.props.reduxState.gatherSurveyInfo[0]}</p>
+                    <p>Your Understanding: {this.props.reduxState.gatherSurveyInfo[1]}</p>
+                    <p>Your Support: {this.props.reduxState.gatherSurveyInfo[2]}</p>
+                    <p>Your Comments: {this.props.reduxState.gatherSurveyInfo[3]}</p>
+                </div>
                 <button onClick={this.goToSuccess}>SUBMIT</button>
             </div>
         )

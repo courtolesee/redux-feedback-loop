@@ -27,7 +27,6 @@ class Comments extends Component {
         return (
             <div>
                 <h2>Any comments you want to leave?</h2>
-                {JSON.stringify(this.props.reduxState)}
                 <form onSubmit={(event)=>this.handleSubmit(event)}>
                     <input onChange={(event)=>this.handleChange(event, 'comment')} value={this.state.comment} className="commentInputs" type="text" placeholder="leave comments here"/>
                     <button type="submit">NEXT</button>

@@ -28,7 +28,6 @@ class Understanding extends Component {
         return (
         <div>
             <h2>How well are you understanding the content?</h2>
-            {JSON.stringify(this.props.reduxState)}
             <form onSubmit={(event)=>this.handleSubmit(event)}>
                 <input onChange={(event)=>this.handleChange(event, 'understanding')} value={this.state.understanding} className="numberInputs" type="number" max="5" min="0" placeholder="1-5"/>
                 <button type="submit">NEXT</button>
