@@ -4,10 +4,22 @@ import { connect } from 'react-redux';
 // 4th route - Any comments you want to leave?
 // next goes to Review
 
-
 class Comments extends Component {
 
-    goToReview = ()=>{
+    state = {
+        comment: ''
+      }
+    
+    handleChange = (event)=>{
+        console.log('comment:', event.target.value);
+        this.setState({
+        comment: event.target.value
+    })
+    }
+    
+    handleSubmit = (event)=>{
+        event.preventDefault();
+        this.props.dispatch({ type: 'GATHER_SURVEY_INFO', payload: this.state.comment });
         this.props.history.push(`/review`);
     }
 
@@ -15,8 +27,12 @@ class Comments extends Component {
         return (
             <div>
                 <h2>Any comments you want to leave?</h2>
-                <input type="text" placeholder="leave comments here"/>
-                <button onClick={this.goToReview}>NEXT</button>
+                {JSON.stringify(this.props.reduxState)}
+                <form onSubmit={(event)=>this.handleSubmit(event)}>
+                    <input onChange={(event)=>this.handleChange(event, 'comment')} value={this.state.comment} className="commentInputs" type="text" placeholder="leave comments here"/>
+                    <button type="submit">NEXT</button>
+                </form>
+                <br/>
             </div>
         )
     }

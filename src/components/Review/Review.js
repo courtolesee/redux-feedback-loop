@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -7,6 +8,8 @@ import { connect } from 'react-redux';
 // Submit Btn sends data to server and saves in DB
 
 class Review extends Component {
+
+    //post 
 
     goToSuccess = ()=>{
         this.props.history.push(`/success`);

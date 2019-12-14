@@ -7,9 +7,16 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
+const gatherSurveyInfo = (state=[], action)=>{
+    if(action.type === `GATHER_SURVEY_INFO`){
+        return [...state, action.payload];
+    }
+    return state;
+}
+
 const storeInstance = createStore(
     combineReducers({
-
+        gatherSurveyInfo
     }),
     applyMiddleware(logger)
 )

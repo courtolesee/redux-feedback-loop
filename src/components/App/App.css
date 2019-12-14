@@ -17,3 +17,12 @@
   font-size: large;
 }
 
+.numberInputs {
+  width: 50px;
+  text-align: center;
+}
+
+.commentInputs {
+  width: 500px;
+}
+

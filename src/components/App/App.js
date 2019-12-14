@@ -1,6 +1,6 @@
-import axios from 'axios';
-import { withRouter, HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+
 // component imports
 import React, { Component } from 'react';
 import Comments from '../Comments/Comments';
