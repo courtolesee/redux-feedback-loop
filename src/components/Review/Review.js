@@ -1,17 +1,32 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Understanding from '../Understanding/Understanding';
 
 // 5th route - 
 // The last step of the process will allow the user to review their feedback. 
 // Users are not able to change their input on this step or go back for Base Mode.
 // Submit Btn sends data to server and saves in DB
 
-class Review extends Component {
 
-    //post 
+class Review extends Component {
+    //post data that has been reviewed to server
+    postFeedback = () => {
+    let dataToSend = {
+        feeling: this.props.reduxState.gatherSurveyInfo[0],
+        understanding: this.props.reduxState.gatherSurveyInfo[1],
+        support: this.props.reduxState.gatherSurveyInfo[2],
+        comments: this.props.reduxState.gatherSurveyInfo[3]
+    }
+    axios.post('/feedback', dataToSend ).then(response=>{
+        console.log(response);
+    }).catch(error=>{
+        alert('error posting feedback');
+        console.log('error posting feedback', error);
+    })}
 
     goToSuccess = ()=>{
+        this.postFeedback();
         this.props.history.push(`/success`);
     }
 
