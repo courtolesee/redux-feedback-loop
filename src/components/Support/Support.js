@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// 3rd route - 1-5 how well are you being supported?
+// 3rd feedback route - 1-5 how well are you being supported?
 // next goes to Comments
 
 class Support extends Component {
 
+    // capturing user input with state and handleChange
     state = {
         support: ''
       }
@@ -16,7 +17,8 @@ class Support extends Component {
         support: event.target.value
     })
     }
-    
+
+    // sending user input to reducer upon form submit - alerts if empty - routes to next feedback 
     handleSubmit = (event)=>{
         event.preventDefault();
         if(this.state.support){this.props.dispatch({ type: 'GATHER_SURVEY_INFO', payload: this.state.support });

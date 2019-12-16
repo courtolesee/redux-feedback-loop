@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// 4th route - Any comments you want to leave?
+// 4th feedback route - Any comments you want to leave?
 // next goes to Review
 
 class Comments extends Component {
 
+    // capturing user input with state and handleChange
     state = {
         comment: ''
       }
@@ -16,7 +17,8 @@ class Comments extends Component {
         comment: event.target.value
     })
     }
-    
+
+    // sending user input to reducer upon form submit - does NOT alert if empty - routes to review 
     handleSubmit = (event)=>{
         event.preventDefault();
         this.props.dispatch({ type: 'GATHER_SURVEY_INFO', payload: this.state.comment });

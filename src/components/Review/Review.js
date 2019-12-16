@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Understanding from '../Understanding/Understanding';
 
 // 5th route - 
 // The last step of the process will allow the user to review their feedback. 
@@ -25,6 +24,7 @@ class Review extends Component {
         console.log('error posting feedback', error);
     })}
 
+    // routes to success
     goToSuccess = ()=>{
         this.postFeedback();
         this.props.history.push(`/success`);
@@ -34,7 +34,7 @@ class Review extends Component {
         return (
             <div>
                 <h2>Review Your Feedback</h2>
-                {JSON.stringify(this.props.reduxState)}
+                {/* {JSON.stringify(this.props.reduxState)} */}
                 <div>
                     <p>Your Feelings: {this.props.reduxState.gatherSurveyInfo[0]}</p>
                     <p>Your Understanding: {this.props.reduxState.gatherSurveyInfo[1]}</p>

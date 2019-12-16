@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// starting feedback, next routes to feelings
 
 class StartFeedback extends Component {
 
@@ -11,6 +12,7 @@ class StartFeedback extends Component {
     render(){
         return (
         <div>
+        <h2>Ready to start today's feedback?</h2>
         <button onClick={this.goToFeeling}>Start my Feedback!</button>
         </div> 
         )

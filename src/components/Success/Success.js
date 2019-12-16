@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 
 class Success extends Component {
 
+    // user can restart feedback for new inputs
     goToStart = ()=>{
         this.props.history.push(`/`);
     }

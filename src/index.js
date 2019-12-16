@@ -7,6 +7,7 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
+// reducer for getting all survey actions 
 const gatherSurveyInfo = (state=[], action)=>{
     if(action.type === `GATHER_SURVEY_INFO`){
         return [...state, action.payload];

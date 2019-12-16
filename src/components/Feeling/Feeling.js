@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// 1st route - 1-5 how are you feeling today?
+// 1st feedback route - 1-5 how are you feeling today?
 // next goes to Understanding
 
 class Feeling extends Component {
 
+    // capturing user input with state and handleChange
     state = {
         feeling: ''
       }
@@ -17,6 +18,7 @@ class Feeling extends Component {
     })
     }
     
+    // sending user input to reducer upon form submit - alerts if empty - routes to next feedback
     handleSubmit = (event)=>{
         event.preventDefault();
         if(this.state.feeling){this.props.dispatch({ type: 'GATHER_SURVEY_INFO', payload: this.state.feeling })

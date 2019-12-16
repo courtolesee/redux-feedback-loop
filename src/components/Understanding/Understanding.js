@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// 2nd route - 1-5 how well are you understanding the content?
+// 2nd feedback route - 1-5 how well are you understanding the content?
 // next goes to Support
 
 class Understanding extends Component {
 
+    // capturing user input with state and handleChange
     state = {
         understanding: ''
       }
@@ -17,6 +18,7 @@ class Understanding extends Component {
     })
     }
     
+    // sending user input to reducer upon form submit - alerts if empty - routes to next feedback 
     handleSubmit = (event)=>{
         event.preventDefault();
         if(this.state.understanding){this.props.dispatch({ type: 'GATHER_SURVEY_INFO', payload: this.state.understanding });
