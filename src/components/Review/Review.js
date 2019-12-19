@@ -19,6 +19,7 @@ class Review extends Component {
     }
     axios.post('/feedback', dataToSend ).then(response=>{
         console.log(response);
+        // could clear reducer here!
     }).catch(error=>{
         alert('error posting feedback');
         console.log('error posting feedback', error);
