@@ -2,7 +2,7 @@
 
 ## Description
 
-Duration: Weekend Challenge (completed in about 3 hours) for Trifid Week 12
+Duration: Weekend Challenge (base assignment completed in about 3 hours) for Trifid Week 12
 
 This project was created to capture student daily feedback in a multi-part form, including: "How are you feeling today?", "How well are you understanding the content?", "How well are you being supported?", and "Any comments you want to leave?" The next buttons route the user to the next form, so long as each form is completed (not including comments). The user then reviews their feedback before hitting submit. Submit send the feedback data to the server to be saved in the database for Prime staff to view. The user can then start over and submit new feedback if they'd like. 
 
